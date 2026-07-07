@@ -6,17 +6,17 @@ const api = axios.create({
 })
 
 export async function listarCategorias() {
-    return await api.get<Categoria[]>("/categoria")
+    return await api.get<Categoria[]>("/categorias")
 }
 
 export async function cadastrarCategoria(categoria: Categoria) {
-    return await api.post<Categoria>("/categoria", categoria)
+    return await api.post<Categoria>("/categorias", categoria)
 }
 
 export async function atualizarCategoria(categoria: Categoria) {
-    return await api.put<Categoria>(`/categoria/${categoria.id}`, categoria)
+    return await api.put<Categoria>(`/categorias/${categoria.id}`, categoria)
 }
 
 export async function deletarCategoria(id: number) {
-    return await api.delete(`/categoria/${id}`)
+    return await api.delete(`/categorias/${id}`)
 }
